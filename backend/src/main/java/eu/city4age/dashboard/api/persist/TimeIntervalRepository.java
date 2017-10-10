@@ -9,7 +9,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import eu.city4age.dashboard.api.persist.generic.GenericRepository;
+<<<<<<< HEAD
 import eu.city4age.dashboard.api.pojo.domain.DetectionVariableType;
+=======
+>>>>>>> c4a-atc/master
 import eu.city4age.dashboard.api.pojo.domain.TimeInterval;
 import eu.city4age.dashboard.api.pojo.dto.Last5Assessment;
 
@@ -17,12 +20,18 @@ import eu.city4age.dashboard.api.pojo.dto.Last5Assessment;
 @Transactional(readOnly = true)
 public interface TimeIntervalRepository extends GenericRepository<TimeInterval, Long> {
 
+<<<<<<< HEAD
 	@Query("SELECT DISTINCT ti FROM TimeInterval ti LEFT JOIN FETCH ti.frailtyStatusTimeline AS fst LEFT JOIN FETCH ti.geriatricFactorValue AS gfv INNER JOIN FETCH gfv.detectionVariable AS dv LEFT JOIN FETCH dv.detectionVariableType AS dvt INNER JOIN FETCH gfv.userInRole AS uir INNER JOIN FETCH uir.userInSystem AS uis WHERE (uir.id = :userId OR uir IS NULL) AND (dvt.detectionVariableType IN :gefType OR dv IS NULL) ORDER BY ti.intervalStart")
 	List<TimeInterval> getGroups(@Param("userId") final Long userId, @Param("gefType") final List<DetectionVariableType.Type> parentFactors);
+=======
+	@Query("SELECT DISTINCT ti FROM TimeInterval ti LEFT JOIN FETCH ti.frailtyStatusTimeline AS fst LEFT JOIN FETCH ti.geriatricFactorValue AS gfv INNER JOIN FETCH gfv.cdDetectionVariable AS dv LEFT JOIN FETCH dv.detectionVariableType AS dvt INNER JOIN FETCH gfv.userInRole AS uir INNER JOIN FETCH uir.userInSystem AS uis WHERE (uir.id = :userId OR uir IS NULL) AND (dvt.detectionVariableType IN :gefType OR dv IS NULL) ORDER BY ti.id")
+	List<TimeInterval> getGroups(@Param("userId") final Long userId, @Param("gefType") final List<String> parentFactors);
+>>>>>>> c4a-atc/master
 
 	@Query(nativeQuery = true)
 	List<Last5Assessment> getLastFiveForDiagram(@Param("userInRoleId") final Long userInRoleId, @Param("parentDetectionVariableId") final Long parentDetectionVariableId,
 			@Param("intervalStart") final Timestamp intervalStart, @Param("intervalEnd") final Timestamp intervalEnd);
+<<<<<<< HEAD
 	
 	TimeInterval findByIntervalStartAndTypicalPeriod(Timestamp intervalStart, String typicalPeriod);
 	
@@ -32,5 +41,7 @@ public interface TimeIntervalRepository extends GenericRepository<TimeInterval, 
 	Long getTimeZoneOffset(@Param("Id") final Long Id);
 	
 	
+=======
+>>>>>>> c4a-atc/master
 
 }

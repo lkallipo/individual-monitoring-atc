@@ -58,7 +58,10 @@ public class SourceEvidenceId implements Serializable {
 		return (this.getGeriatricFactorId() == castOther.getGeriatricFactorId())
 				&& ((this.getRoleId() == castOther.getRoleId()));
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4a-atc/master
 	public int hashCode() {
 		int result = 17;
 

@@ -11,6 +11,10 @@ requirejs.config({
   //injector:mainReleasePaths
   {
     'knockout': 'libs/knockout/knockout-3.4.0',
+<<<<<<< HEAD
+=======
+    'knockout-postbox': 'libs/knockout-postbox/knockout-postbox.min',
+>>>>>>> c4a-atc/master
     'jquery': 'libs/jquery/jquery-3.1.1.min',
     'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.0.min',
     'promise': 'libs/es6-promise/es6-promise.min',
@@ -27,12 +31,19 @@ requirejs.config({
     'entities': 'domain/entities',
     'urls': 'urls',
     
+<<<<<<< HEAD
     'add-assessment': 'composites/anagraph-assessment-view/add-assessment/loader',
     'assessments-list': 'composites/anagraph-assessment-view/assessments-list/loader',
     'assessments-preview': 'composites/anagraph-assessment-view/assessments-preview/loader',
     'anagraph-assessment-view': 'composites/anagraph-assessment-view/loader',
     
     'anagraph-measure-view': 'composites/anagraph-measure-view/loader'
+=======
+    'add-assessment': 'composites/add-assessment/loader',
+    'assessments-list': 'composites/assessments-list/loader',
+    'assessments-preview': 'composites/assessments-preview/loader',
+    'anagraph-assessment-view': 'composites/anagraph-assessment-view/loader'
+>>>>>>> c4a-atc/master
   }
   //endinjector
   ,

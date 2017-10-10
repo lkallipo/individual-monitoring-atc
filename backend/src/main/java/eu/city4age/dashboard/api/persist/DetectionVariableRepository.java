@@ -1,14 +1,18 @@
 package eu.city4age.dashboard.api.persist;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+=======
+>>>>>>> c4a-atc/master
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import eu.city4age.dashboard.api.persist.generic.GenericRepository;
 import eu.city4age.dashboard.api.pojo.domain.DetectionVariable;
+<<<<<<< HEAD
 import eu.city4age.dashboard.api.pojo.domain.DetectionVariableType;
 
 @Repository(value = "detectionVariableRepository")
@@ -25,3 +29,9 @@ public interface DetectionVariableRepository extends GenericRepository<Detection
 	List<DetectionVariable> findAllMEADvTypeByPilotCode(@Param("pilotCode") String pilotCode);
 
 }
+=======
+
+@Repository(value = "detectionVariableRepository")
+@Transactional(readOnly = true)
+public interface DetectionVariableRepository extends GenericRepository<DetectionVariable, Long> {}
+>>>>>>> c4a-atc/master

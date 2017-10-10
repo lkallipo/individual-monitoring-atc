@@ -2,6 +2,7 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'appController', 'jquery
     'ojs/ojknockout', 'ojs/ojinputtext', 'ojs/ojbutton', 'urls'],
         function (oj, ko, sp, app, $) {
 
+<<<<<<< HEAD
 	
 	//until we find better solution to reload data for cr_list after switching between users
 	$(document).click(function() { 
@@ -23,6 +24,16 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'appController', 'jquery
                // this.passwordLabel=  oj.Translations.getTranslatedString('password_l');
                // this.loginLabel = oj.Translations.getTranslatedString('login_l');
                // this.resetLabel = oj.Translations.getTranslatedString('reset_l');
+=======
+            function LoginViewModel() {
+                $(".loader-hover").hide();
+                var self = this;
+
+                // this.userLabel = oj.Translations.getTranslatedString('user_l');
+                // this.passwordLabel=  oj.Translations.getTranslatedString('password_l');
+                // this.loginLabel = oj.Translations.getTranslatedString('login_l');
+                // this.resetLabel = oj.Translations.getTranslatedString('reset_l');
+>>>>>>> c4a-atc/master
 
                 var url = sp.baseUrl + sp.loginMethod;
 
@@ -33,6 +44,7 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'appController', 'jquery
                 self.loginUser = function (viewModel, event) {
                     console.log("username " + self.loginValue() + " password " + self.passwordValue());
 
+<<<<<<< HEAD
 	            $.getJSON(USER_LOGIN + "/username/" + self.loginValue() + "/password/" + self.passwordValue()).
 	                    then(function (users) {
 	                        if (users.responseCode === 10) {
@@ -54,12 +66,40 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'appController', 'jquery
 	                    });       
                 };
                 
+=======
+                    $.getJSON(USER_LOGIN + "/username/" + self.loginValue() + "/password/" + self.passwordValue()).
+                            then(function (users) {
+                                if (users.responseCode === 200) {
+                                    /*logged in 
+                                     * keep in session storage username and display name
+                                     */
+                                    sp.setStorageData(users.jwToken, users.displayName, users.pilotName);
+
+                                    $('#appHeader').css({display: 'block'});
+                                    $('.user-menu').css({display: 'block'});
+
+                                    oj.Router.rootInstance.go("cr_list_full");
+                                    app.userLogin(users.displayName);
+                                    app.userPilotName(users.pilotName);
+
+                                } else if (users.responseCode === 401) {
+                                    console.log("wrong credentials ", users.message);
+                                }
+                            });
+                };
+
+>>>>>>> c4a-atc/master
                 self.resetForm = function (viewModel, event) {
                     self.loginValue('');
                     self.passwordValue('');
                 };
+<<<<<<< HEAD
                     $('#mainContent').css({'background-color': '#f1f1f1'});
                     $('#mainContent').css({'border-color': '#f1f1f1'});
+=======
+                $('#mainContent').css({'background-color': '#f1f1f1'});
+                $('#mainContent').css({'border-color': '#f1f1f1'});
+>>>>>>> c4a-atc/master
             }
             var loginViewModel = new LoginViewModel();
             return  loginViewModel;

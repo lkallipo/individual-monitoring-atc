@@ -25,12 +25,19 @@ define(['ojs/ojcore', 'knockout'], function (oj, ko) {
             getUrl.userAge = userAge;
         };
 
+<<<<<<< HEAD
         self.setStorageData = function (username,userfullname, pilotname, pilotCode, roleid) {
         	sessionStorage.setItem("username", username);
         	sessionStorage.setItem("userfullname", userfullname);        	
         	sessionStorage.setItem("pilotname", pilotname);
         	sessionStorage.setItem("pilotcode", pilotCode);
         	sessionStorage.setItem("roleid", roleid);
+=======
+        self.setStorageData = function (jwt, displayName, pilotName) {
+        	sessionStorage.setItem("jwt", jwt);
+                sessionStorage.setItem("displayname", displayName);
+                sessionStorage.setItem("pilotname", pilotName);
+>>>>>>> c4a-atc/master
         };
         // Retrieve the JSON data string from browser session storage
         self.getStorageData = function () {

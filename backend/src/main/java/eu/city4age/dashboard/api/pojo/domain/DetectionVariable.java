@@ -2,14 +2,18 @@ package eu.city4age.dashboard.api.pojo.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
+<<<<<<< HEAD
 import java.util.HashSet;
 import java.util.Set;
+=======
+>>>>>>> c4a-atc/master
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+<<<<<<< HEAD
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,11 +25,21 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
 @Entity
 @Table(name = "cd_detection_variable")
 public class DetectionVariable extends AbstractBaseEntity<Long> {
+=======
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="cd_detection_variable")
+public class DetectionVariable extends AbstractBaseEntity {
+>>>>>>> c4a-atc/master
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -821517967630729430L;
+<<<<<<< HEAD
 	
 	@JsonView(View.VariationMeasureValueView.class)
 	@Column(name = "detection_variable_name")
@@ -62,6 +76,32 @@ public class DetectionVariable extends AbstractBaseEntity<Long> {
 
 	@OneToMany(mappedBy = "detectionVariable", fetch = FetchType.LAZY)
 	private Set<VariationMeasureValue> variationMeasureValue = new HashSet<VariationMeasureValue>();
+=======
+
+	@Column(name="detection_variable_name")
+	private String detectionVariableName;
+	
+	@JsonIgnore
+	@Column(name="valid_from")
+	private Date validFrom;
+	
+	@JsonIgnore
+	@Column(name="valid_to")
+	private Date validTo;
+	
+	@Column(name="derivation_weight")
+	private BigDecimal derivationWeight;
+
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="derived_detection_variable_id", referencedColumnName="id")
+	private DetectionVariable derivedDetectionVariable;
+	
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="detection_variable_type")
+	private  DetectionVariableType detectionVariableType;
+>>>>>>> c4a-atc/master
 
 	public DetectionVariable() {
 	}
@@ -122,6 +162,7 @@ public class DetectionVariable extends AbstractBaseEntity<Long> {
 	public Date getValidTo() {
 		return validTo;
 	}
+<<<<<<< HEAD
 	public String getDefaultTypicalPeriod() {
 		return defaultTypicalPeriod;
 	}
@@ -145,4 +186,7 @@ public class DetectionVariable extends AbstractBaseEntity<Long> {
 				this.variationMeasureValue = variationMeasureValue;
 			}
 
+=======
+	
+>>>>>>> c4a-atc/master
 }

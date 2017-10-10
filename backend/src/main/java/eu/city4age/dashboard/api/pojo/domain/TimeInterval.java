@@ -1,16 +1,23 @@
 package eu.city4age.dashboard.api.pojo.domain;
 
+<<<<<<< HEAD
 import java.io.Serializable;
+=======
+>>>>>>> c4a-atc/master
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
+<<<<<<< HEAD
 import javax.persistence.Basic;
+=======
+>>>>>>> c4a-atc/master
 import javax.persistence.Column;
 import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+<<<<<<< HEAD
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,6 +29,15 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
+=======
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.SqlResultSetMapping;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+>>>>>>> c4a-atc/master
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -35,6 +51,7 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
 				@ColumnResult(name = "assessment_comment"), @ColumnResult(name = "risk_status"),
 				@ColumnResult(name = "data_validity_status"), @ColumnResult(name = "created"),
 				@ColumnResult(name = "display_name") }) })
+<<<<<<< HEAD
 // Need to check this querry why assessment properties were null
 @NamedNativeQuery(name = "TimeInterval.getLastFiveForDiagram", resultSetMapping = "lastFiveMapping", query = "SELECT DISTINCT ti.id AS time_interval_id, ti.interval_start, gfv.id AS gef_id, gfv.gef_value, aa.id AS assessment_id, aa.assessment_comment, aa.risk_status AS risk_status, aa.data_validity_status, aa.created AS created, uis.display_name FROM time_interval AS ti LEFT OUTER JOIN (geriatric_factor_value AS gfv LEFT OUTER JOIN (assessed_gef_value_set AS agvs INNER JOIN assessment AS aa ON agvs.assessment_id = aa.id) ON agvs.gef_value_id = gfv.id) ON gfv.time_interval_id=ti.id LEFT OUTER JOIN user_in_role AS uir ON uir.id = gfv.user_in_role_id LEFT OUTER JOIN user_in_system AS uis ON uis.id = uir.user_in_system_id WHERE ti.interval_start >= :intervalStart AND (ti.interval_end <= :intervalEnd OR ti.typical_period = 'MON') AND (aa.id IN (SELECT id FROM (SELECT DISTINCT a1.id,a1.created FROM assessment a1 INNER JOIN assessed_gef_value_set AS agvs1 ON agvs1.assessment_id = a1.id WHERE agvs1.gef_value_id = agvs.gef_value_id ORDER BY a1.created DESC FETCH FIRST 5 ROWS ONLY) t) OR aa.id IS NULL) AND (gfv.user_in_role_id = :userInRoleId OR gfv.id IS NULL) AND (gfv.gef_type_id IN (SELECT dv1.id FROM cd_detection_variable AS dv1 JOIN md_pilot_detection_variable as pdv1 ON dv1.id = pdv1.detection_variable_id WHERE pdv1.derived_detection_variable_id = :parentDetectionVariableId AND pdv1.pilot_code = uir.pilot_code) OR gfv.id IS NULL) ORDER BY ti.id")
 
@@ -42,12 +59,21 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
 @Table(name = "time_interval", uniqueConstraints = @UniqueConstraint(columnNames = { "interval_start",
 		"typical_period" }, name = "time_interval_interval_start_typical_period_key"))
 public class TimeInterval implements Serializable {
+=======
+//Need to check this querry why assessment properties were null
+@NamedNativeQuery(name = "TimeInterval.getLastFiveForDiagram", resultSetMapping = "lastFiveMapping", query = "SELECT DISTINCT ti.id AS time_interval_id, ti.interval_start, gfv.id AS gef_id, gfv.gef_value, aa.id AS assessment_id, aa.assessment_comment, aa.risk_status AS risk_status, aa.data_validity_status, aa.created AS created, uis.display_name FROM time_interval AS ti LEFT OUTER JOIN (geriatric_factor_value AS gfv LEFT OUTER JOIN (assessed_gef_value_set AS agvs INNER JOIN assessment AS aa ON agvs.assessment_id = aa.id) ON agvs.gef_value_id = gfv.id) ON gfv.time_interval_id=ti.id LEFT OUTER JOIN user_in_role AS uir ON uir.id = gfv.user_in_role_id LEFT OUTER JOIN user_in_system AS uis ON uis.id = uir.user_in_system_id WHERE ti.interval_start >= :intervalStart AND ti.interval_end <= :intervalEnd AND (aa.id IN (SELECT id FROM (SELECT DISTINCT a1.id,a1.created FROM assessment a1 INNER JOIN assessed_gef_value_set AS agvs1 ON agvs1.assessment_id = a1.id WHERE agvs1.gef_value_id = agvs.gef_value_id ORDER BY a1.created DESC FETCH FIRST 5 ROWS ONLY) t) OR aa.id IS NULL) AND (gfv.user_in_role_id = :userInRoleId OR gfv.id IS NULL) AND (gfv.gef_type_id IN (SELECT id FROM cd_detection_variable WHERE derived_detection_variable_id = :parentDetectionVariableId) OR gfv.id IS NULL) ORDER BY ti.id")
+
+@Entity
+@Table(name = "time_interval")
+public class TimeInterval extends AbstractBaseEntity {
+>>>>>>> c4a-atc/master
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -865550404227746101L;
 
+<<<<<<< HEAD
 	@Id
 	@Basic(optional = false)
 	@SequenceGenerator(name = "ti_seq", sequenceName = "time_interval_id_seq", allocationSize = 1)
@@ -75,17 +101,35 @@ public class TimeInterval implements Serializable {
 
 	@JsonView(View.TimeIntervalView.class) // Only on start not end, check
 											// this!!!	
+=======
+	@JsonIgnore
+	@Column(name = "interval_start")
+	private Timestamp intervalStart;
+
+	@JsonIgnore
+	@Column(name = "interval_end")
+	private Timestamp intervalEnd;
+
+	@JsonView(View.TimeIntervalView.class)
+>>>>>>> c4a-atc/master
 	@Transient
 	private String start;
 
 	@Transient
 	private String end;
+<<<<<<< HEAD
 	
 	
 	@Column(name = "typical_period")
 	private String typicalPeriod;
 
 	@Transient
+=======
+
+	@Column(name = "typical_period")
+	private String typicalPeriod;
+
+>>>>>>> c4a-atc/master
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	@OneToMany(mappedBy = "timeInterval", fetch = FetchType.LAZY)
 	private Set<Activity> activities = new HashSet<Activity>(0);
@@ -196,10 +240,14 @@ public class TimeInterval implements Serializable {
 	}
 
 	public String getEnd() {
+<<<<<<< HEAD
 		if(intervalEnd != null)
 			return intervalEnd.toString();
 		else
 			return "";
+=======
+		return intervalEnd.toString();
+>>>>>>> c4a-atc/master
 	}
 
 }

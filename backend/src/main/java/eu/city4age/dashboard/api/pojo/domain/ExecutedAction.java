@@ -10,7 +10,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="executed_action")
+<<<<<<< HEAD
 public class ExecutedAction extends AbstractBaseEntity<Long> {
+=======
+public class ExecutedAction extends AbstractBaseEntity {
+>>>>>>> c4a-atc/master
 
 	/**
 	 * 

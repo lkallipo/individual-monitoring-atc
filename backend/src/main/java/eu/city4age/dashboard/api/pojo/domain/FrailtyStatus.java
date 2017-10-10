@@ -1,6 +1,9 @@
 package eu.city4age.dashboard.api.pojo.domain;
 
+<<<<<<< HEAD
 import java.io.Serializable;
+=======
+>>>>>>> c4a-atc/master
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +18,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name="cd_frailty_status")
+<<<<<<< HEAD
 public class FrailtyStatus implements Serializable {
+=======
+public class FrailtyStatus implements java.io.Serializable {
+>>>>>>> c4a-atc/master
 
 	/**
 	 * 

@@ -12,7 +12,11 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
 
 @Entity
 @Table(name="user_in_system")
+<<<<<<< HEAD
 public class UserInSystem extends AbstractBaseEntity<Long> {
+=======
+public class UserInSystem extends AbstractBaseEntity {
+>>>>>>> c4a-atc/master
 
 	/**
 	 * 

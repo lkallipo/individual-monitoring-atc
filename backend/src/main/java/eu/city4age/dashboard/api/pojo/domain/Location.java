@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name="location")
+<<<<<<< HEAD
 public class Location extends AbstractBaseEntity<Long> {
+=======
+public class Location extends AbstractBaseEntity {
+>>>>>>> c4a-atc/master
 
     /**
 	 * 
@@ -23,7 +27,11 @@ public class Location extends AbstractBaseEntity<Long> {
 	private static final long serialVersionUID = 3078496828665625658L;
 
 	@ManyToOne
+<<<<<<< HEAD
     @JoinColumn(name="pilot_code")
+=======
+    @JoinColumn(name="pilot_id")
+>>>>>>> c4a-atc/master
 	private Pilot pilot;
 
     @Column(name="location_name")
@@ -77,4 +85,8 @@ public class Location extends AbstractBaseEntity<Long> {
 		this.executedActions = executedActions;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c4a-atc/master

@@ -1,19 +1,36 @@
 package eu.city4age.dashboard.api.pojo.domain;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import java.time.YearMonth;
 import java.time.ZoneId;
 import java.util.Date;
+=======
+import java.util.HashSet;
+>>>>>>> c4a-atc/master
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+<<<<<<< HEAD
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
 @Table(name = "pilot")
+=======
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import java.io.Serializable;
+import javax.persistence.Id;
+
+@Entity
+@Table(name="pilot")
+>>>>>>> c4a-atc/master
 public class Pilot implements Serializable {
 
 	/**
@@ -21,6 +38,7 @@ public class Pilot implements Serializable {
 	 */
 	private static final long serialVersionUID = -1267893598090303628L;
 
+<<<<<<< HEAD
 	private String name;
 
 	@Id
@@ -61,6 +79,35 @@ public class Pilot implements Serializable {
 		this.pilotCode = pilotCode;
 		this.populationSize = populationSize;
 		//this.locations = locations;
+=======
+        @Column(name="pilot_name")
+	private String name;
+	
+        @Id
+	@Column(name="code")
+	private String pilotCode;
+	
+	@Column(name="population_size")
+	private Double populationSize;
+	
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
+	@OneToMany(mappedBy="pilot",fetch=FetchType.LAZY)
+	private Set<Location> locations = new HashSet<Location>(0);
+	
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
+	@OneToMany(mappedBy="pilot",fetch=FetchType.LAZY)
+	private Set<PilotDetectionVariable> cdPilotDetectionVariables = new HashSet<PilotDetectionVariable>(0);
+
+	public Pilot() {
+	}
+
+	public Pilot(String name, String pilotCode, Double populationSize, Set<Location> locations, Set<PilotDetectionVariable> cdPilotDetectionVariables) {
+		this.name = name;
+		this.pilotCode = pilotCode;
+		this.populationSize = populationSize;
+		this.locations = locations;
+		this.cdPilotDetectionVariables = cdPilotDetectionVariables;
+>>>>>>> c4a-atc/master
 	}
 
 	public String getName() {
@@ -87,12 +134,17 @@ public class Pilot implements Serializable {
 		this.populationSize = populationSize;
 	}
 
+<<<<<<< HEAD
 	/*public Set<Location> getLocations() {
+=======
+	public Set<Location> getLocations() {
+>>>>>>> c4a-atc/master
 		return this.locations;
 	}
 
 	public void setLocations(Set<Location> locations) {
 		this.locations = locations;
+<<<<<<< HEAD
 	}*/
 
 	public YearMonth getLastSubmitted() {
@@ -152,6 +204,16 @@ public class Pilot implements Serializable {
 
 	public void setLatestConfigurationUpdate(Date latestConfigurationUpdate) {
 		this.latestConfigurationUpdate = latestConfigurationUpdate;
+=======
+	}
+
+	public Set<PilotDetectionVariable> getCdPilotDetectionVariables() {
+		return this.cdPilotDetectionVariables;
+	}
+
+	public void setCdPilotDetectionVariables(Set<PilotDetectionVariable> cdPilotDetectionVariables) {
+		this.cdPilotDetectionVariables = cdPilotDetectionVariables;
+>>>>>>> c4a-atc/master
 	}
 
 }

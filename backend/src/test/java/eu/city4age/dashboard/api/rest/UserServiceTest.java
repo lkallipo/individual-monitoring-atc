@@ -13,14 +13,24 @@ import org.springframework.web.client.RestTemplate;
 public class UserServiceTest {
 
 	static protected Logger logger = LogManager.getLogger(AssessmentServiceTest.class);
+<<<<<<< HEAD
 
 	static protected RestTemplate rest = new TestRestTemplate();
 
+=======
+	
+	static protected RestTemplate rest = new TestRestTemplate();
+	
+>>>>>>> c4a-atc/master
 	@Test
 	public void loginTest() throws Exception {
 
 		try {
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> c4a-atc/master
 			String uri = "http://localhost:8080/C4A-dashboard/rest/users/login/username/letizia/password/lventurin1";
 			HttpHeaders headers = rest.getForEntity(uri, String.class).getHeaders();
 			ResponseEntity<String> response = rest.getForEntity(uri, String.class);

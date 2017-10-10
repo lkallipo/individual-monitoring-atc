@@ -11,7 +11,11 @@ import eu.city4age.dashboard.api.pojo.domain.Assessment;
 @Repository(value = "assessmentRepository")
 @Transactional(readOnly = true)
 @EntityFilter(filterQueries = {
+<<<<<<< HEAD
 		@FilterQuery(name = "findForSelectedDataSet", 
 				jpql = "SELECT aa FROM Assessment aa JOIN aa.geriatricFactorValue AS gfv JOIN aa.roles AS aar LEFT JOIN FETCH aa.userInRole AS uir LEFT JOIN FETCH uir.userInSystem AS uis WHERE gfv.id IN :geriatricFactorIds") })
+=======
+		@FilterQuery(name = "findForSelectedDataSet", jpql = "SELECT aa FROM Assessment aa JOIN aa.geriatricFactorValue AS gfv JOIN aa.roles AS aar LEFT JOIN FETCH aa.userInRole AS uir LEFT JOIN FETCH uir.userInSystem AS uis WHERE gfv.id IN :geriatricFactorIds") })
+>>>>>>> c4a-atc/master
 public interface AssessmentRepository extends GenericRepository<Assessment, Long> {
 }

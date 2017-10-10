@@ -22,8 +22,11 @@ define(['ojs/ojcore', 'ojs/ojarraytabledatasource'],
                     {name: 'Detection GEF', id: 'detection_gef',
                         iconClass: 'demo-chart-icon-24  demo-icon-font-24 oj-navigationlist-item-icon'},
                     {name: 'Detection GES', id: 'detection_ges',
+<<<<<<< HEAD
                         iconClass: 'demo-chart-icon-24 demo-icon-font-24 oj-navigationlist-item-icon'},
                     {name: 'Detection MEA', id: 'detection_mea',
+=======
+>>>>>>> c4a-atc/master
                         iconClass: 'demo-chart-icon-24 demo-icon-font-24 oj-navigationlist-item-icon'}
                 ];
 

@@ -11,11 +11,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 public class CodebookServiceTest {
+<<<<<<< HEAD
 
 	static protected Logger logger = LogManager.getLogger(CodebookServiceTest.class);
 
 	static protected RestTemplate rest = new TestRestTemplate();
 
+=======
+	
+	static protected Logger logger = LogManager.getLogger(CodebookServiceTest.class);
+	
+	static protected RestTemplate rest = new TestRestTemplate();
+	
+>>>>>>> c4a-atc/master
 	@Test
 	public void selectTableTest() throws Exception {
 		try {
@@ -33,7 +41,11 @@ public class CodebookServiceTest {
 			Assert.fail();
 		}
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> c4a-atc/master
 	@Test
 	public void getAllRiskStatusTest() throws Exception {
 
@@ -53,10 +65,17 @@ public class CodebookServiceTest {
 		}
 
 	}
+<<<<<<< HEAD
 
 	@Test
 	public void getAllRolesForStakeholderAbbrTest() throws Exception {
 
+=======
+	
+	@Test
+	public void getAllRolesForStakeholderAbbrTest() throws Exception {
+		
+>>>>>>> c4a-atc/master
 		try {
 			String uri = "http://localhost:8080/C4A-dashboard/rest/codebook/getAllRolesForStakeholderAbbr/GES";
 			HttpHeaders headers = rest.getForEntity(uri, String.class).getHeaders();
@@ -72,5 +91,10 @@ public class CodebookServiceTest {
 			Assert.fail();
 		}
 	}
+<<<<<<< HEAD
+=======
+	
+	//getAllDataValitidityStatusTest is not used
+>>>>>>> c4a-atc/master
 
 }

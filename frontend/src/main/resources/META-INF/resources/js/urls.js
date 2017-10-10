@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var app = 'C4A-dashboard';
+=======
+var app = 'build';
+>>>>>>> c4a-atc/master
 var rest = 'rest';
 var hostname = location.hostname; //location.hostname, 'c4adashboard.atc.gr'
 var port = location.port;
@@ -18,7 +22,10 @@ var CARE_RECIPIENT_ALL = root + "careRecipient/getCareRecipients";
 var CARE_RECIPIENT_GROUPS = root + "careRecipient/getGroups";
 var CARE_RECIPIENT_DIAGRAM_DATA = root + "careRecipient/getDiagramData";
 
+<<<<<<< HEAD
 var DAILY_MEASURES_DATA = root + "measures/getDailyMeasures";
 var NUI_VALUES_DATA = root + "measures/getNuiValues";
 
+=======
+>>>>>>> c4a-atc/master
 var USER_LOGIN = root + "users/login";

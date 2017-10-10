@@ -8,7 +8,11 @@
                data-bind="ojComponent: {component: 'ojTable', 
                                 data: dataSource, 
                                 emptyText: 'No data',
+<<<<<<< HEAD
                                 columnsDefault: {headerStyle: 'background:transparent;font-weight:bold;',sortable: 'disabled'}, 
+=======
+                                columnsDefault: {headerStyle: 'background:transparent;font-weight:bold;',sortable: 'enabled'}, 
+>>>>>>> c4a-atc/master
                                 columns: [
                                     {headerText: 'Pilot', 
                                         field: 'pilotcode'},
@@ -35,7 +39,11 @@
                                     {headerText: 'Actions', 
                                         template: 'action_btn_tpl'}],
                                 scrollPolicy: 'loadMoreOnScroll',
+<<<<<<< HEAD
                                 scrollPolicyOptions: {'fetchSize': 10 },
+=======
+                                scrollPolicyOptions: {'fetchSize': 10},
+>>>>>>> c4a-atc/master
                                 rootAttributes: {'style':'width: 100%;height:750px;'}}">
         </table>
 
@@ -84,7 +92,11 @@
         </button>
         <!-- To handle menu item selection, use a select listener as shown, not a click listener. -->
         <ul id="myMenu" style="display:none " 
+<<<<<<< HEAD
             data-bind="ojComponent: {component: 'ojMenu', select: $parent.menuItemSelect}"> 
+=======
+            data-bind="ojComponent: {component: 'ojMenu', select: $parent.menuItemSelectsss}"> 
+>>>>>>> c4a-atc/master
             <li id="view_more_det">
                 <a data-bind="click: function(){$parent.navigateToGef();}" href="#">View more details</a>
             </li>

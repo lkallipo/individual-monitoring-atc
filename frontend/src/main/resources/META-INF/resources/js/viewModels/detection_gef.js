@@ -1,8 +1,15 @@
 define(['ojs/ojcore', 'knockout', 'jquery', 'setting_properties', 'promise',
+<<<<<<< HEAD
     'ojs/ojknockout', 'ojs/ojmodule','ojs/ojmodel', 'ojs/ojchart', 'ojs/ojlegend', 'ojs/ojbutton',
     'ojs/ojmenu', 'ojs/ojpopup', 'ojs/ojinputtext', 'ojs/ojtoolbar', 'ojs/ojselectcombobox', 'ojs/ojslider',
     'ojs/ojradioset', 'ojs/ojdialog', 'ojs/ojlistview', 'ojs/ojarraytabledatasource', 'ojs/ojswitch', 'ojs/ojtabs', 
     'urls','entities', 'add-assessment', 'assessments-list', 'assessments-preview', 'anagraph-assessment-view','anagraph-measure-view'],
+=======
+    'knockout-postbox', 'ojs/ojknockout', 'ojs/ojmodule','ojs/ojmodel', 'ojs/ojchart', 'ojs/ojlegend', 'ojs/ojbutton',
+    'ojs/ojmenu', 'ojs/ojpopup', 'ojs/ojinputtext', 'ojs/ojtoolbar', 'ojs/ojselectcombobox', 'ojs/ojslider',
+    'ojs/ojradioset', 'ojs/ojdialog', 'ojs/ojlistview', 'ojs/ojarraytabledatasource', 'ojs/ojswitch', 'ojs/ojtabs', 
+    'urls','entities', 'add-assessment', 'assessments-list', 'assessments-preview', 'anagraph-assessment-view'],
+>>>>>>> c4a-atc/master
 
 function (oj, ko, $, sp, params) {
 	
@@ -10,12 +17,30 @@ function (oj, ko, $, sp, params) {
 
     function GraphicsContentViewModel() {
 
+<<<<<<< HEAD
     	var self = this;
 
         self.careRecipientId = ko.observable();
         self.highlightValue = ko.observable();
 
         self.selectedId = ko.observable();
+=======
+    	//Labels on GEF page with translate option
+    	this.careRecipientLabel = oj.Translations.getTranslatedString("care_recipient");
+    	this.ageLabel = oj.Translations.getTranslatedString("age");
+    	this.assignGeriatricianLabel= oj.Translations.getTranslatedString("assign_geriatrician");
+    	this.summaryLabel= oj.Translations.getTranslatedString("summary");
+    	this.detectionGEFGroupsLineChartLabel = oj.Translations.getTranslatedString("detection_gef_groups_chart");
+    	this.lineChartLabel = oj.Translations.getTranslatedString('line_chart');
+    	this.morphologyLabel = oj.Translations.getTranslatedString('morphology');
+    	this.visualisationsLabel = oj.Translations.getTranslatedString('visualisations');
+    	
+        var self = this;
+        self.careRecipientId = ko.observable();
+        self.highlightValue = ko.observable();
+
+        var selectedId;
+>>>>>>> c4a-atc/master
 
         var lineColors = ['#b4b2b2','#ea97f1', '#5dd6c9', '#e4d70d', '#82ef46', '#29a4e4'];
 
@@ -25,10 +50,15 @@ function (oj, ko, $, sp, params) {
 
         function initCRData() {
             self.userAge = sp.userAge;
+<<<<<<< HEAD
             self.userGender = "male";
             self.textline = sp.userTextline;
             
             
+=======
+            self.userGender = sp.userGender;
+            self.textline = sp.userTextline;
+>>>>>>> c4a-atc/master
         }
 
         self.selectedGefName = "";
@@ -47,7 +77,10 @@ function (oj, ko, $, sp, params) {
             offsetTop = e.offsetX;
             offsetLeft = e.offsetY;                   
         });
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4a-atc/master
         $(document).on("mouseup touchend", function (e) {
             clientX = e.clientX;
             clientY = e.clientY;
@@ -67,6 +100,7 @@ function (oj, ko, $, sp, params) {
         }
 
         /*  Detection FGR Groups Line Chart configuration  */
+<<<<<<< HEAD
         self.seriesVal = ko.observableArray([]);
         self.groupsVal = ko.observableArray([]);
         
@@ -74,12 +108,22 @@ function (oj, ko, $, sp, params) {
         self.lineSeriesValue = ko.observableArray([]);
         
         self.selectedAnotations = ko.observableArray([]);
+=======
+        self.seriesVal = ko.observableArray();
+        self.groupsVal = ko.observableArray();
+        
+        self.lineGroupsValue = ko.observableArray();
+        self.lineSeriesValue = ko.observableArray();
+        
+        self.selectedAnotations = ko.observableArray();
+>>>>>>> c4a-atc/master
         
         /* Risks select */
         self.risksTags = ko.observableArray([]);
         
         self.isChecked = ko.observable();
         
+<<<<<<< HEAD
         self.checkedFilterRiskStatus = ko.observableArray([]);
         self.checkedFilterValidityData = ko.observableArray([]);
         
@@ -96,6 +140,24 @@ function (oj, ko, $, sp, params) {
         
         self.polarChartSeriesValue = ko.observableArray([]);
         self.polarChartGroupsValue = ko.observableArray([]);
+=======
+        self.checkedFilterRiskStatus = ko.observableArray();
+        self.checkedFilterValidityData = ko.observableArray();
+        
+        self.roleTags = ko.observableArray([]);  
+        self.selectedRoles = ko.observableArray();
+        
+        self.val = ko.observableArray(["Month"]);
+        
+        self.dataPointsMarkedIds = ko.observableArray();
+        
+        self.polarGridShapeValue = ko.observable('polygon');
+        self.polarChartSeriesValue = ko.observableArray();
+        self.polarChartGroupsValue = ko.observableArray();
+        
+        self.polarChartSeriesValue = ko.observableArray();
+        self.polarChartGroupsValue = ko.observableArray();
+>>>>>>> c4a-atc/master
         
 		self.filterList = function() {
             filterAssessments(self.queryParams, self.checkedFilterValidityData);
@@ -105,6 +167,7 @@ function (oj, ko, $, sp, params) {
             return {id: id, value: value, gefTypeId: gefTypeId};
         }
 
+<<<<<<< HEAD
     	//Labels on GEF page with translate option
     	self.careRecipientLabel = oj.Translations.getTranslatedString("care_recipient");
     	self.ageLabel = oj.Translations.getTranslatedString("age");
@@ -117,6 +180,8 @@ function (oj, ko, $, sp, params) {
     	self.readMoreLabel = oj.Translations.getTranslatedString("read_more");
     	self.genderLabel = oj.Translations.getTranslatedString("gender");
 
+=======
+>>>>>>> c4a-atc/master
         /* End Detection FGR Groups Line Chart configuration  */
 
         var groups = ["Initial", "Jan 2016", "Feb 2016", "Mar 2016", "Apr 2016", "May 2016", "Jun 2016", "Jul 2016", "Aug 2016", "Sep 2016", "Oct 2016", "Nov 2016", "Dec 2016"];
@@ -144,7 +209,11 @@ function (oj, ko, $, sp, params) {
         /* End: Group 1 and Group 2 Line Chart configuration with dynamic data */
         
         /*  Detection GEF Groups Line Chart configuration*/	
+<<<<<<< HEAD
         self.lineSeries2Value = ko.observableArray([]);   	
+=======
+        self.lineSeries2Value = ko.observableArray();   	
+>>>>>>> c4a-atc/master
         
         
         self.titleValue = ko.observable("");
@@ -157,7 +226,11 @@ function (oj, ko, $, sp, params) {
             document.getElementById('detectionGEFGroup1FactorsLineChart').style.visibility = 'visible';
             document.getElementById('detectionGEFGroup1FactorsLineChart').style.display = 'block';
 
+<<<<<<< HEAD
             self.titleValue(oj.Translations.getTranslatedString('gfg') + " - " + ui['series'].charAt(0).toUpperCase()+ui['series'].slice(1));
+=======
+            graphicsContentViewModel.titleValue(  ui['series'].charAt(0).toUpperCase()+ui['series'].slice(1) + oj.Translations.getTranslatedString('geriatric_factors') );
+>>>>>>> c4a-atc/master
 
             self.titlePart(ko.toJS(self.titleValue));
             
@@ -184,9 +257,12 @@ function (oj, ko, $, sp, params) {
             self.lineGroupsValue = data.groups;
             self.lineSeriesValue = data.series;
             
+<<<<<<< HEAD
             //printing diagram data from json: 
             //console.log('Diagram data from json :' + JSON.stringify(data));
             
+=======
+>>>>>>> c4a-atc/master
            for(var ig = 0; ig < Object.keys(data.series).length; ig++){
         		data.series[ig].name = oj.Translations.getTranslatedString(data.series[ig].name);
         	} 
@@ -210,6 +286,7 @@ function (oj, ko, $, sp, params) {
             $('#detectionGEFGroup1FactorsLineChart').prop('series', data.series); 
             
             var param = [self.careRecipientId, self.parentFactorId];
+<<<<<<< HEAD
             
             $('#detectionGEFGroup1FactorsLineChart').prop('selectedItemsValue', []);
 
@@ -217,6 +294,9 @@ function (oj, ko, $, sp, params) {
             $('#detectionGEFGroup1FactorsLineChart')[0].loadAssessmentsCached();
 
 
+=======
+            ko.postbox.publish("loadAssessmentsCached", param);
+>>>>>>> c4a-atc/master
             
         };
         
@@ -227,9 +307,15 @@ function (oj, ko, $, sp, params) {
             document.getElementById('detectionGEFGroup1FactorsLineChart').style.visibility = 'visible';
             document.getElementById('detectionGEFGroup1FactorsLineChart').style.display = 'block';
 
+<<<<<<< HEAD
             self.selectedId = JSON.stringify(ui['seriesData']['items'][0]['gefTypeId']);
 
             self.titleValue(seriesVal + "Geriatric factors");
+=======
+            selectedId = JSON.stringify(ui['seriesData']['items'][0]['gefTypeId']);
+
+            graphicsContentViewModel.titleValue(seriesVal + "Geriatric factors");
+>>>>>>> c4a-atc/master
             self.parentFactorId = ui['seriesData'].items[0].gefTypeId;
             
         
@@ -245,12 +331,21 @@ function (oj, ko, $, sp, params) {
             {name: groups[5], items: [lineSeries2[0].items[5], lineSeries2[1].items[5], lineSeries2[2].items[5], lineSeries2[3].items[5]], color: '#1DDB1B'}];
 
         self.polarGridShapeValue1 = ko.observable();
+<<<<<<< HEAD
         self.polarChartSeriesValue1 = ko.observableArray([]);
         self.polarChartGroupsValue1 = ko.observableArray([]);
 
         self.polarGridShapeValue2 = ko.observable();
         self.polarChartSeriesValue2 = ko.observableArray([]);
         self.polarChartGroupsValue2 = ko.observableArray([]);
+=======
+        self.polarChartSeriesValue1 = ko.observableArray();
+        self.polarChartGroupsValue1 = ko.observableArray();
+
+        self.polarGridShapeValue2 = ko.observable();
+        self.polarChartSeriesValue2 = ko.observableArray();
+        self.polarChartGroupsValue2 = ko.observableArray();
+>>>>>>> c4a-atc/master
 
         self.stackValue = ko.observable('off');
         self.typeValue = ko.observable('line');
@@ -261,12 +356,20 @@ function (oj, ko, $, sp, params) {
 
                 $.each(gefData.itemList, function (i, list) {
                     if (list.parentGroupName.indexOf("Behavioural") !== -1) {
+<<<<<<< HEAD
                         self.polarChartGroupsValue1.push({
+=======
+                        graphicsContentViewModel.polarChartGroupsValue1.push({
+>>>>>>> c4a-atc/master
                             name: list.items[0].groupName,
                             items: list.items[0].itemList
                         });
                     } else if (list.parentGroupName.indexOf("Contextual") !== -1) {
+<<<<<<< HEAD
                     	self.polarChartGroupsValue2.push({
+=======
+                        graphicsContentViewModel.polarChartGroupsValue2.push({
+>>>>>>> c4a-atc/master
                             name: list.items[0].groupName,
                             items: list.items[0].itemList
                         });
@@ -275,11 +378,19 @@ function (oj, ko, $, sp, params) {
 
                 document.getElementById('detectionGEFGroup1FactorsLineChart').style.display = 'block';
 
+<<<<<<< HEAD
                 self.polarGridShapeValue1('polygon');
                 self.polarChartSeriesValue1(lineSeriesPolar1);
 
                 self.polarGridShapeValue2('polygon');
                 self.polarChartSeriesValue2(lineSeriesPolar2);
+=======
+                graphicsContentViewModel.polarGridShapeValue1('polygon');
+                graphicsContentViewModel.polarChartSeriesValue1(lineSeriesPolar1);
+
+                graphicsContentViewModel.polarGridShapeValue2('polygon');
+                graphicsContentViewModel.polarChartSeriesValue2(lineSeriesPolar2);
+>>>>>>> c4a-atc/master
 
                 document.getElementById('polarChart1').style.display = 'block';
                 document.getElementById('polarChart2').style.display = 'block';
@@ -336,10 +447,26 @@ function (oj, ko, $, sp, params) {
         function loadCdDetectionVariables() {
             $.getJSON(CODEBOOK_SELECT + '/cd_detection_variable', function(data) {
                 self.cdDetectionVariables = CdDetectionVariable.produceFromTable(data);
+<<<<<<< HEAD
                 $('#detectionGEFGroup1FactorsLineChart').prop('cdDetectionVariables', self.cdDetectionVariables);
             });
         }
 
+=======
+                
+            });
+        }
+
+        //Returns chart by ID for detection variable name that was drilled in (clicked on)
+        self.bGotoGESClick = function() {
+        	
+            var selectedDetectionVariable = CdDetectionVariable.findByDetectionVariableId(self.cdDetectionVariables, selectedId);
+            oj.Router.rootInstance.store([self.careRecipientId, selectedDetectionVariable]);
+            oj.Router.rootInstance.go('detection_ges');
+            
+        };
+
+>>>>>>> c4a-atc/master
         //Loading Data for detectionGEFGroupsLineChart chart 
         function loadCRData() {
             $.getJSON(CARE_RECIPIENT_GROUPS + "/careRecipientId/" + self.careRecipientId + "/parentFactors/OVL/GFG")
@@ -370,12 +497,20 @@ function (oj, ko, $, sp, params) {
                             break;
                         default:
                     	}
+<<<<<<< HEAD
                     	
                     });
                     if(data && data.itemList && data.itemList.length>0)
                     	self.groupsVal(data.itemList[0].items[0].dateList);
                     else
                     	self.groupsVal([]);
+=======
+                    });
+                    if(data && data.itemList && data.itemList.length>0)
+                        $.each(data.itemList[0].items[0].dateList, function (j, dateItem) {
+                            self.groupsVal.push(dateItem);
+                        });
+>>>>>>> c4a-atc/master
                     
                     $.each(self.seriesVal(), function (i, s) {
                             if(s.name === 'Overall'){
@@ -389,6 +524,7 @@ function (oj, ko, $, sp, params) {
                     });
                     
                     $(".loader-hover").hide();
+<<<<<<< HEAD
                     
                     //If we get objects with property 'items' == undefined, then set them to [null] so that
                     //oracle jet cant give an error
@@ -398,6 +534,8 @@ function (oj, ko, $, sp, params) {
                         }
                     });                    
 
+=======
+>>>>>>> c4a-atc/master
                 });
         }
         
@@ -408,7 +546,19 @@ function (oj, ko, $, sp, params) {
                     })
         }
 
+<<<<<<< HEAD
     }
 
     return  GraphicsContentViewModel;
+=======
+        ko.postbox.subscribe("chartDrillGEF", function(ui) {
+        	self.chartDrill2(ui);
+			self.bGotoGESClick();
+        });
+
+    }
+
+    var graphicsContentViewModel = new GraphicsContentViewModel();
+    return  graphicsContentViewModel;
+>>>>>>> c4a-atc/master
 });

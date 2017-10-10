@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 define(['ojs/ojcore', 'knockout', 'jquery', 'setting_properties',
+=======
+define(['ojs/ojcore', 'knockout', 'jquery', 'setting_properties','knockout-postbox',
+>>>>>>> c4a-atc/master
      'ojs/ojknockout', 'ojs/ojmodule','ojs/ojmodel', 'ojs/ojchart', 'ojs/ojlegend', 'ojs/ojbutton',
     'ojs/ojmenu', 'ojs/ojpopup', 'ojs/ojinputtext', 'ojs/ojtoolbar', 'ojs/ojselectcombobox', 'ojs/ojslider',
     'ojs/ojradioset', 'ojs/ojdialog', 'ojs/ojlistview', 'ojs/ojarraytabledatasource', 'ojs/ojswitch', 'ojs/ojtabs', 
@@ -12,7 +16,21 @@ function (oj, ko, $, sp) {
         
         var self = this;
         
+<<<<<<< HEAD
         self.titleValue = ko.observable("");
+=======
+        
+        self.careRecipientLabel = oj.Translations.getTranslatedString("care_recipient");
+        self.ageLabel = oj.Translations.getTranslatedString("age");
+        self.genderLabel = oj.Translations.getTranslatedString("gender");
+        self.assignGeriatricianLabel= oj.Translations.getTranslatedString("assign_geriatrician");
+        self.summaryLabel= oj.Translations.getTranslatedString("summary");
+        self.readMoreLabel = oj.Translations.getTranslatedString("read_more");
+       // self.selectGefLabel = oj.Translations.getTranslatedString("select_gef");
+       
+        
+        self.titleObj = ko.observable();
+>>>>>>> c4a-atc/master
         
         self.userAge = sp.userAge;
         self.userGender = sp.userGender;
@@ -41,6 +59,7 @@ function (oj, ko, $, sp) {
         self.dataPointsMarkedIds = ko.observableArray();
         
         self.queryParams = ko.observable();
+<<<<<<< HEAD
 
         self.careRecipientLabel = oj.Translations.getTranslatedString("care_recipient");
         self.ageLabel = oj.Translations.getTranslatedString("age");
@@ -49,6 +68,8 @@ function (oj, ko, $, sp) {
         self.summaryLabel= oj.Translations.getTranslatedString("summary");
         self.readMoreLabel = oj.Translations.getTranslatedString("read_more");
        // self.selectGefLabel = oj.Translations.getTranslatedString("select_gef");
+=======
+>>>>>>> c4a-atc/master
         
         var serverErrorCallback = function (xhr, message, error) {
             console.log(error);
@@ -56,6 +77,7 @@ function (oj, ko, $, sp) {
 
         self.handleActivated = function (info) {
             var selectedDetectionVariable = oj.Router.rootInstance.retrieve();
+<<<<<<< HEAD
             if(selectedDetectionVariable !== undefined) {
 	            self.careRecipient(selectedDetectionVariable[0]);
 	            self.subFactorName(selectedDetectionVariable[1].detectionVariableName);
@@ -63,6 +85,19 @@ function (oj, ko, $, sp) {
 	            self.subFactorType(selectedDetectionVariable[1].detectionVariableType);
 	            self.titleValue(oj.Translations.getTranslatedString(self.subFactorType().toLowerCase()) + " - " + oj.Translations.getTranslatedString(self.subFactorName()));
             }
+=======
+            
+            self.careRecipient(selectedDetectionVariable[0]);
+            self.subFactorName(selectedDetectionVariable[1].detectionVariableName);
+            self.parentFactor(selectedDetectionVariable[1].id); //derivedDetectionVariableIds
+            self.subFactorType(selectedDetectionVariable[1].detectionVariableType);
+            
+            console.log("***"+selectedDetectionVariable[0]+"***");
+            console.log("///"+JSON.stringify(selectedDetectionVariable[1])+"///");
+            
+            self.titleObj({"text": oj.Translations.getTranslatedString(self.subFactorType().toLowerCase())+" - " + oj.Translations.getTranslatedString(self.subFactorName()), "halign": "center"});
+
+>>>>>>> c4a-atc/master
         };
 
 

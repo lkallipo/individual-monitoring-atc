@@ -20,13 +20,18 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
  * @author Milos Holclajtner (milos.holclajtner at belit.co.rs)
  */
 @MappedSuperclass
+<<<<<<< HEAD
 public abstract class AbstractBaseEntity<T> implements Serializable {
+=======
+public abstract class AbstractBaseEntity implements Serializable {
+>>>>>>> c4a-atc/master
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
+<<<<<<< HEAD
 	@JsonView(View.BaseView.class)
 	@Id
 	@Generated(GenerationTime.INSERT)
@@ -38,6 +43,19 @@ public abstract class AbstractBaseEntity<T> implements Serializable {
 	}
 
 	public void setId(T id) {
+=======
+	@JsonView(View.AssessmentView.class)
+	@Id
+	@Generated(GenerationTime.INSERT)
+	@Column(name = "id", insertable = true, updatable = true, unique = true, nullable = false)
+	protected Long id;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+>>>>>>> c4a-atc/master
 		this.id = id;
 	}
 

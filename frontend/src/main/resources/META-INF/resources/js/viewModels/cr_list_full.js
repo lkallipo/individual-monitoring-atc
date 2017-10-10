@@ -1,14 +1,18 @@
 define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockout', 'ojs/ojtable', 'ojs/ojgauge', 'ojs/ojarraytabledatasource', 'urls'],
         function (oj, ko, sp, $)
         {
+<<<<<<< HEAD
 			var m=0;
 			
 			sessionStorage.setItem('clck',0);
 			
+=======
+>>>>>>> c4a-atc/master
 
             function ListViewModel() {
                 var self = this;
                 self.data = ko.observableArray();
+<<<<<<< HEAD
                 self.usersOuter = ko.observableArray();
                 
                 var pilotCode = sessionStorage.getItem("pilotcode");
@@ -25,10 +29,27 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
 
                                 var frailStatus;
                                 if (this.frailtyStatus === undefined || this.frailtyStatus === null) {
+=======
+                
+                var jwt = sessionStorage.getItem("jwt");
+
+                $.ajaxSetup({
+                  cache: false,
+                  headers : {
+                    'Authorization' : jwt}
+                });
+                $.getJSON(CARE_RECIPIENT_ALL + "?t=" + Date.now()).
+                        then(function (users) {
+                            $.each(users.itemList, function () {
+
+                                var frailStatus;
+                                if (this.frailtyStatus === null) {
+>>>>>>> c4a-atc/master
                                     frailStatus = "pre-frail-fit";
                                 } else {
                                     frailStatus = this.frailtyStatus;
                                 }
+<<<<<<< HEAD
                                 
                                 var frailNotice;
                                 if (this.frailtyNotice === undefined || this.frailtyNotice === null) {
@@ -36,11 +57,17 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
                                 } else {
                                 	frailNotice = this.frailtyNotice;
                                 }
+=======
+>>>>>>> c4a-atc/master
 
                                 self.data.push({
                                     cr_id: this.userId,
                                     fr_status: frailStatus,
+<<<<<<< HEAD
                                     fr_notice: frailNotice,
+=======
+                                    fr_notice: this.frailtyNotice,
+>>>>>>> c4a-atc/master
                                     textline: this.textline,
                                     attention: this.attention,
                                     det_status: this.detectionStatus,
@@ -52,9 +79,12 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
                                 });
                                 $(".loader-hover").hide();
                             });
+<<<<<<< HEAD
                             ;
                             self.usersOuter = users;
                             
+=======
+>>>>>>> c4a-atc/master
                         });
 
 
@@ -67,6 +97,7 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
 
                 self.menuItemSelect = function (event, ui) {
                     var currentRow = $('#table').ojTable('option', 'currentRow');
+<<<<<<< HEAD
                     var selectData;
                     
                   //finding cr with cr_id = selectedRow.keyId
@@ -77,6 +108,10 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
 			               }
 
                     console.log(" selected care recipient with: id " + selectData['cr_id'] + " age " + selectData['age']);
+=======
+                    var selectData = self.data()[currentRow['rowIndex']];
+                    console.log("id " + selectData['cr_id'] + " age " + selectData['age']);
+>>>>>>> c4a-atc/master
 
                     switch (ui.item.attr("id")) {
                         case "view_more_det":
@@ -85,12 +120,17 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
 
                             sp.setuserTextline(selectData['textline']);
 
+<<<<<<< HEAD
                             
                             //app should be defined in define block for this below to work!
                             
                            /* app.age(selectData['age']);
 
                             app.textline(selectData['textline']);*/
+=======
+                            app.age(selectData['age']);
+                            app.textline(selectData['textline']);
+>>>>>>> c4a-atc/master
 
                             oj.Router.rootInstance.go("detection_gef");
 
@@ -104,6 +144,7 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
 
                 self.navigateToGef = function() {
                     var currentTableRow = $( "#table" ).ojTable("option", "currentRow");
+<<<<<<< HEAD
                     var crData;
 	                  //finding cr with cr_id = selectedRow.keyId
 	                  for(var i = 0; i< self.data().length; i++){                    	                    	
@@ -113,6 +154,10 @@ define(['ojs/ojcore', 'knockout', 'setting_properties', 'jquery', 'ojs/ojknockou
 	                                      }
 	
 	                    self.viewGef(crData.cr_id,crData.textline,crData.age);
+=======
+                    var crData = self.data()[currentTableRow.rowIndex];
+                    self.viewGef(crData.cr_id,crData.textline,crData.age);
+>>>>>>> c4a-atc/master
                 };
 
                 self.viewGef = function (userId, textline, age) {
