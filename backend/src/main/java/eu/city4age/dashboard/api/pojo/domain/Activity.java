@@ -15,11 +15,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name="activity")
-<<<<<<< HEAD
 public class Activity extends AbstractBaseEntity<Long> {
-=======
-public class Activity extends AbstractBaseEntity {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 
@@ -31,11 +27,7 @@ public class Activity extends AbstractBaseEntity {
 	private DataSourceType cdDataSourceType;
 	
 	@ManyToOne
-<<<<<<< HEAD
     @JoinColumn(name="time_interval_id", referencedColumnName = "id")
-=======
-    @JoinColumn(name="time_interval_id")
->>>>>>> c4a-atc/master
 	private TimeInterval timeInterval;
 	
 	@Column(name="user_in_role_id")

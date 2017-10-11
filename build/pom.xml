@@ -11,12 +11,9 @@
 	<relativePath>../</relativePath>
   </parent>
   
-<<<<<<< HEAD
   <properties>
     <main.basedir>${project.parent.parent.basedir}</main.basedir>
   </properties>
-=======
->>>>>>> c4a-atc/master
 
   <build>
 	<finalName>C4A-dashboard</finalName>
@@ -29,23 +26,6 @@
 	   <directory>../backend/src/main/resources/</directory>
      </resource>
    </resources>
-<<<<<<< HEAD
-  </build>
-
-=======
-    <plugins>
-		<plugin>
-		<artifactId>maven-compiler-plugin</artifactId>
-			<configuration>
-				<source>1.8</source>
-				<target>1.8</target>
-			</configuration>
-		</plugin> 
-		<plugin>
-			<groupId>org.glassfish.maven.plugin</groupId>
-			<artifactId>maven-glassfish-plugin</artifactId>
-		</plugin>
-    </plugins>
   </build>
 
         <dependencies>
@@ -56,5 +36,4 @@
             </dependency>
         </dependencies>
 
->>>>>>> c4a-atc/master
 </project>

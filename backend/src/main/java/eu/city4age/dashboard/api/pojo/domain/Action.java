@@ -13,11 +13,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name="action")
-<<<<<<< HEAD
 public class Action extends AbstractBaseEntity<Long> {
-=======
-public class Action extends AbstractBaseEntity {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 
@@ -37,12 +33,7 @@ public class Action extends AbstractBaseEntity {
 	@OneToMany(mappedBy="action",fetch=FetchType.LAZY)
 	private Set<ExecutedAction> executedActions = new HashSet<ExecutedAction>(0);
 
-<<<<<<< HEAD
 	public Action() {}
-=======
-	public Action() {
-	}
->>>>>>> c4a-atc/master
 
 	public Action(String actionName, String category, Set<Eam> eams, Set<ExecutedAction> executedActions) {
 		this.actionName = actionName;

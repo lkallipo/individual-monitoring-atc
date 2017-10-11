@@ -1,6 +1,5 @@
 package eu.city4age.dashboard.api.pojo.domain;
 
-<<<<<<< HEAD
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -35,28 +34,11 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
 @Entity
 @Table(name = "variation_measure_value")
 public class VariationMeasureValue extends AbstractBaseEntity<Long> {
-=======
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
-@Entity
-@Table(name="variation_measure_value")
-public class VariationMeasureValue extends AbstractBaseEntity {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2579000073949031381L;
-<<<<<<< HEAD
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "activity_id")
 	private Activity activity;
@@ -88,60 +70,17 @@ public class VariationMeasureValue extends AbstractBaseEntity {
 	
 	@Column(name = "data_source_type", length = 1000)
 	private String dataSourceType;
-=======
-
-	@ManyToOne
-    @JoinColumn(name="activity_id")
-	private Activity activity;
-	
-	/*@ManyToOne
-    @JoinColumn(name="data_source_type")
-	private DataSourceType cdDataSourceType;*/
-
-	@ManyToOne
-    @JoinColumn(name="measure_type_id")
-	private DetectionVariable cdDetectionVariable;
-	
-	@Transient
-	@ManyToOne
-    @JoinColumn(name="time_interval_id")	
-	private TimeInterval timeInterval;
-
-	@ManyToOne
-    @JoinColumn(name="user_in_role_id")
-	private UserInRole userInRole;
-
-	@Column(name="measure_value")
-	private Float measureValue;
-	
-	/*@Column(name="data_source_type")
-	@Type(type="eu.city4age.dashboard.api.persist.convert.IntArrayUserType") 
-	private int[] cdDataSourceType;*/
-	
-	@OneToMany
-	@JoinColumn(name="variation_measure_id")
-	private Set<NumericIndicatorValue> numericIndicatorValues = new HashSet<NumericIndicatorValue>(0);
->>>>>>> c4a-atc/master
 
 	public VariationMeasureValue() {
 	}
 
-<<<<<<< HEAD
 	public VariationMeasureValue(DetectionVariable detectionVariable, TimeInterval timeInterval,
 			UserInRole userInRole) {
 		this.detectionVariable = detectionVariable;
-=======
-	public VariationMeasureValue(//int[] cdDataSourceType, 
-			DetectionVariable cdDetectionVariable,
-			TimeInterval timeInterval, UserInRole userInRole) {
-		//this.cdDataSourceType = cdDataSourceType;
-		this.cdDetectionVariable = cdDetectionVariable;
->>>>>>> c4a-atc/master
 		this.timeInterval = timeInterval;
 		this.userInRole = userInRole;
 	}
 
-<<<<<<< HEAD
 	public VariationMeasureValue(Activity activity, DetectionVariable detectionVariable, TimeInterval timeInterval,
 			UserInRole userInRole, BigDecimal measureValue, String dataSourceType, String extraInformation) {
 		this.activity = activity;
@@ -151,18 +90,6 @@ public class VariationMeasureValue extends AbstractBaseEntity {
 		this.measureValue = measureValue;
 		this.dataSourceType = dataSourceType;
 		this.extraInformation = extraInformation;
-=======
-	public VariationMeasureValue(Activity activity, //int[] cdDataSourceType,
-			DetectionVariable cdDetectionVariable, TimeInterval timeInterval, UserInRole userInRole,
-			Float measureValue, Set<NumericIndicatorValue> numericIndicatorValues) {
-		this.activity = activity;
-		//this.cdDataSourceType = cdDataSourceType;
-		this.cdDetectionVariable = cdDetectionVariable;
-		this.timeInterval = timeInterval;
-		this.userInRole = userInRole;
-		this.measureValue = measureValue;
-		this.numericIndicatorValues = numericIndicatorValues;
->>>>>>> c4a-atc/master
 	}
 
 	public Activity getActivity() {
@@ -173,29 +100,12 @@ public class VariationMeasureValue extends AbstractBaseEntity {
 		this.activity = activity;
 	}
 
-<<<<<<< HEAD
 	public DetectionVariable getDetectionVariable() {
 		return this.detectionVariable;
 	}
 
 	public void setDetectionVariable(DetectionVariable detectionVariable) {
 		this.detectionVariable = detectionVariable;
-=======
-	/*public int[] getCdDataSourceType() {
-		return cdDataSourceType;
-	}
-
-	public void setCdDataSourceType(int[] cdDataSourceType) {
-		this.cdDataSourceType = cdDataSourceType;
-	}*/
-
-	public DetectionVariable getCdDetectionVariable() {
-		return this.cdDetectionVariable;
-	}
-
-	public void setCdDetectionVariable(DetectionVariable cdDetectionVariable) {
-		this.cdDetectionVariable = cdDetectionVariable;
->>>>>>> c4a-atc/master
 	}
 
 	public TimeInterval getTimeInterval() {
@@ -214,7 +124,6 @@ public class VariationMeasureValue extends AbstractBaseEntity {
 		this.userInRole = userInRole;
 	}
 
-<<<<<<< HEAD
 	public BigDecimal getMeasureValue() {
 		return this.measureValue;
 	}
@@ -237,22 +146,6 @@ public class VariationMeasureValue extends AbstractBaseEntity {
 
 	public void setExtraInformation(String extraInformation) {
 		this.extraInformation = extraInformation;
-=======
-	public Float getMeasureValue() {
-		return this.measureValue;
-	}
-
-	public void setMeasureValue(Float measureValue) {
-		this.measureValue = measureValue;
-	}
-
-	public Set<NumericIndicatorValue> getNumericIndicatorValues() {
-		return this.numericIndicatorValues;
-	}
-
-	public void setNumericIndicatorValues(Set<NumericIndicatorValue> numericIndicatorValues) {
-		this.numericIndicatorValues = numericIndicatorValues;
->>>>>>> c4a-atc/master
 	}
 
 }

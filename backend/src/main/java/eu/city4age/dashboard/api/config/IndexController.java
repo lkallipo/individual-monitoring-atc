@@ -18,8 +18,4 @@ public class IndexController implements ErrorController{
     public String getErrorPath() {
         return PATH;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c4a-atc/master

@@ -15,10 +15,7 @@
       <property name="hibernate.format_sql" value="false"/>
       <property name="hibernate.use_sql_comments" value="false"/>
       <property name="hibernate.generate_statistics" value="false"/>
-<<<<<<< HEAD
-=======
       <property name="hibernate.classloading.use_current_tccl_as_parent" value="false" />
->>>>>>> c4a-atc/master
     </properties>
   </persistence-unit>
 </persistence>

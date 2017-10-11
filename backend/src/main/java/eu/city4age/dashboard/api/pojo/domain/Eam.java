@@ -7,11 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="eam")
-<<<<<<< HEAD
 public class Eam extends AbstractBaseEntity<Long> {
-=======
-public class Eam extends AbstractBaseEntity {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 

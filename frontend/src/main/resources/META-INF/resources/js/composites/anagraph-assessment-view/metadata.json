@@ -1,14 +1,10 @@
 {
 	"name": "anagraph-assessment-view",
-<<<<<<< HEAD
 	"description": "Main component with functionalities for displaying assessments.",
-=======
->>>>>>> c4a-atc/master
 	"version": "1.0.0",
 	"jetVersion": ">=3.0.0",
 	"properties": {
 		"title": {
-<<<<<<< HEAD
 			"description": "Title of diagram.",
 			"type": "object"
 		},
@@ -78,27 +74,3 @@
 
 }
 
-=======
-			"type": "object"
-		},
-		"legend": {
-			"type": "object"
-		},
-		"careRecipientId": {
-			"type": "number"
-		},
-		"parentFactorId": {
-			"type": "number"
-		},
-		"series": {
-			"type": "Array<object>"
-		},
-		"groups": {
-			"type": "Array<object>"
-		},
-		"drilling": {
-			"type": "string"
-		}
-	}
-}
->>>>>>> c4a-atc/master

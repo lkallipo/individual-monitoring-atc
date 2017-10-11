@@ -80,10 +80,7 @@ public class GenericRepositoryImpl<T, ID extends Serializable> extends SimpleJpa
 	}
 
 	@Override
-<<<<<<< HEAD
 	@SuppressWarnings("unchecked")
-=======
->>>>>>> c4a-atc/master
 	public List<T> doQueryWithFilter(List<eu.city4age.dashboard.api.pojo.persist.Filter> filters,
 			String filterQueryName, Map<String, Object> inQueryParams) {
 
@@ -112,10 +109,7 @@ public class GenericRepositoryImpl<T, ID extends Serializable> extends SimpleJpa
 									String filterParamName = key.toString();
 
 									if (flt.getInParams().get(key) instanceof List) {
-<<<<<<< HEAD
 										
-=======
->>>>>>> c4a-atc/master
 										List<T> filterParamValue = (List<T>) flt.getInParams().get(key);
 										filter.setParameterList(filterParamName, filterParamValue);
 									} else {
@@ -152,7 +146,6 @@ public class GenericRepositoryImpl<T, ID extends Serializable> extends SimpleJpa
 		entityManager.unwrap(Session.class).disableFilter(name);
 	}
 
-<<<<<<< HEAD
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
@@ -163,6 +156,4 @@ public class GenericRepositoryImpl<T, ID extends Serializable> extends SimpleJpa
 	}
 
 
-=======
->>>>>>> c4a-atc/master
 }

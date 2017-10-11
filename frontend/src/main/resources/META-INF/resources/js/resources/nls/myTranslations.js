@@ -25,13 +25,8 @@ define({
 				nui:"Numeric indicator",
 				ovl:"Overall frailty score",
 
-<<<<<<< HEAD
 				//from cd_detection_variable
 				overall:"Overall",
-=======
-
-				overall : "Overall",
->>>>>>> c4a-atc/master
 				behavioural:"Behavioural",
 				contextual:"Contextual",
 				motility:"Motility",
@@ -52,17 +47,10 @@ define({
 				weakness:"Weakness",
 				weight_loss:"Weight loss",
 				climbing_stairs:"Climbing stairs",
-<<<<<<< HEAD
 			 	"still-moving":"Still/Moving",
 				moving_rooms:"Moving across rooms",
 				bathing_showering:"Bathing and showering",
 				dressing:"Dressing",
-=======
-			 	"still-moving" : "Still/Moving",
-				moving_rooms:"Moving across rooms",
-				bathing_showering:"Bathing and showering",
-				dressing : "Dressing",
->>>>>>> c4a-atc/master
 			 	"self-feeding":"Self-feeding",
 				personal_hygiene:"Personal hygiene and grooming",
 				toilet_hygiene:"Toilet Hygiene",
@@ -81,35 +69,21 @@ define({
 				attending_social_places:"Attending other social places",
 				going_restaurants:"Going to restaurants",
 				"visiting_culture-entertaimment_places":"Visiting culture/entertaimment places",
-<<<<<<< HEAD
-=======
-				
->>>>>>> c4a-atc/master
 				reading_newspapers:"Reading newspapers",
 				reading_books:"Reading books",
 				housing_quality:"Quality of housing",
 				neighborhood_quality:"Quality of neighborhood",
 				falls:"Falls",
-<<<<<<< HEAD
-=======
-				
-				
->>>>>>> c4a-atc/master
 				exhaustion:"Exhaustion",
 				pain:"Pain",
 				appetite_loss:"Appetite loss",
 				sleep_quality:"Quality of sleep",
 				doctors_visits:"Visits to doctors",
-<<<<<<< HEAD
 				"visits_health-related_places":"Visits to other health-related places",
-=======
-				"visits_health-related_places" : "Visits to other health-related places",
->>>>>>> c4a-atc/master
 				abstraction:"Abstraction",
 				attention:"Attention",
 				memory:"Memory",
 				mood:"Mood",
-<<<<<<< HEAD
 				appetite: "Apetite" ,
 				bathroom_time:"Bathroom time",
 				bathroom_visits:"Bathroom visits",
@@ -222,25 +196,13 @@ define({
 					
 				add_annotation: "Add annotation" ,
 				from:"from",
-=======
-				
-			   
-				
-				//labels not from DB
-				add_annotation: "Add annotation" ,
-				from : "from",
->>>>>>> c4a-atc/master
 				morphology:"Morphology" ,
 				valid_data: "Valid data" ,
 				questionable_data: "Questionable data", 
                 faulty_data: "Faulty data",
 				
 				//detection_gef page
-<<<<<<< HEAD
 				fit:"Fit",
-=======
-				fit : "Fit",
->>>>>>> c4a-atc/master
 				frail: "Frail",
 				"pre-frail": "Pre-Frail",
 				care_recipient:"Care recipient:",
@@ -280,21 +242,12 @@ define({
                 assessments: " assessment(s) " ,
                 view_annotations :"View annotations" ,
                 view_daily_measures :"View daily measures" ,
-<<<<<<< HEAD
                 dpmw:" data points marked with " ,
-=======
-                view_nuis :"View NUIs" ,
-                dpmw : " data points marked with " ,
->>>>>>> c4a-atc/master
                 warning_status: "Warning status" , 
                 alert_status: "Alert status" ,
                 
                 //add-assessment
-<<<<<<< HEAD
                 no_data_set_selected:"No data set selected!" ,
-=======
-                no_data_set_selected : "No data set selected!" ,
->>>>>>> c4a-atc/master
                 full_annotation_comment: "Full annotation comment:" , 
                 chose_type :"Choose type" ,
                 for_select_role :"For (select multiple)" ,
@@ -311,8 +264,25 @@ define({
                 
                 //assessment-list
                 read_more :"Read more" ,
-                show_on_diagram :"Show on diagram"
-
+                show_on_diagram :"Show on diagram",
+                
+                //login page translations
+                username :"Username:",
+                password :"Password:",
+                welcome_message_1 :"Welcome to the City4Age Dashboard Login page. Access is restricted to authorised members only. ",
+                welcome_message_2 :"Use our ",
+                welcome_message_3 :"Contact Form",
+                welcome_message_4 :" to request access.",
+                login :"Login:",
+                loggedinas : "Logged in as",
+                
+                //cr_list_full page translation
+                show_more :"Show more:",
+                view_more_details :"View more details",
+                view_intervention_summary : "View Intervention Summary",
+                view_detection_summary : "View Detection Summary",
+                open_detection_session : "Open Detection Session",
+                open_detection_intervention : "Open Detection Intervention"
 	},
 	
 		    "zh-Hant" : true,

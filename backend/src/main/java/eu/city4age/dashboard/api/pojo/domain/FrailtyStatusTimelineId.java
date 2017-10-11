@@ -1,18 +1,11 @@
 package eu.city4age.dashboard.api.pojo.domain;
 
-<<<<<<< HEAD
 import java.io.Serializable;
-=======
->>>>>>> c4a-atc/master
 import java.util.Date;
 
 import javax.persistence.Column;
 
-<<<<<<< HEAD
 public class FrailtyStatusTimelineId implements Serializable {
-=======
-public class FrailtyStatusTimelineId implements java.io.Serializable {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 

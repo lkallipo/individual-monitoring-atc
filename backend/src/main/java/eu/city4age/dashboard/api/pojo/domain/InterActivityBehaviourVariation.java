@@ -7,11 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="inter_activity_behaviour_variation")
-<<<<<<< HEAD
 public class InterActivityBehaviourVariation extends AbstractBaseEntity<Long> {
-=======
-public class InterActivityBehaviourVariation extends AbstractBaseEntity {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 
@@ -83,8 +79,4 @@ public class InterActivityBehaviourVariation extends AbstractBaseEntity {
 		this.deviation = deviation;
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c4a-atc/master
