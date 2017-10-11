@@ -8,13 +8,9 @@ import eu.city4age.dashboard.api.pojo.domain.Pilot;
 
 @Repository(value = "pilotRepository")
 @Transactional(readOnly = true)
-<<<<<<< HEAD
 public interface PilotRepository extends GenericRepository<Pilot, String> {
 
 
 	Pilot findByPilotCode(String pilotCode);
 
 }
-=======
-public interface PilotRepository extends GenericRepository<Pilot, String> {}
->>>>>>> c4a-atc/master

@@ -24,21 +24,13 @@ import eu.city4age.dashboard.api.pojo.json.view.View;
 
 @Entity
 @Table(name = "user_in_role")
-<<<<<<< HEAD
 public class UserInRole extends AbstractBaseEntity<Long> {
-=======
-public class UserInRole extends AbstractBaseEntity {
->>>>>>> c4a-atc/master
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1957422483462322553L;
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> c4a-atc/master
 	@Column(name = "pilot_code")
 	private String pilotCode;
 
@@ -55,11 +47,7 @@ public class UserInRole extends AbstractBaseEntity {
 	@JoinColumn(name = "user_in_system_id")
 	private UserInSystem userInSystem;
 
-<<<<<<< HEAD
 	@Column(name = "role_id")
-=======
-	@Column(name = "cd_role_id")
->>>>>>> c4a-atc/master
 	private Short roleId;
 
 	@JsonManagedReference
@@ -90,17 +78,6 @@ public class UserInRole extends AbstractBaseEntity {
 		this.frailtyStatusTimeline = frailtyStatusTimeline;
 	}
 
-<<<<<<< HEAD
-=======
-	public String getPilotCode() {
-		return this.pilotCode;
-	}
-
-	public void setPilotCode(String pilotCode) {
-		this.pilotCode = pilotCode;
-	}
-
->>>>>>> c4a-atc/master
 	public void setValidFrom(Date validFrom) {
 		this.validFrom = validFrom;
 	}
@@ -157,7 +134,6 @@ public class UserInRole extends AbstractBaseEntity {
 		this.frailtyStatusTimeline = frailtyStatusTimeline;
 	}
 
-<<<<<<< HEAD
 	public String getPilotCode() {
 		return pilotCode;
 	}
@@ -166,6 +142,4 @@ public class UserInRole extends AbstractBaseEntity {
 		this.pilotCode = pilotCode;
 	}
 
-=======
->>>>>>> c4a-atc/master
 }

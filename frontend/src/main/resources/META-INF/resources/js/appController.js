@@ -12,12 +12,8 @@ define(['ojs/ojcore', 'knockout', 'navigation', 'setting_properties', 'ojs/ojrou
                 var self = this;
 
         $.ajaxSetup({
-<<<<<<< HEAD
-            contentType: "application/json; charset=utf-8"
-=======
             contentType: "application/json; charset=utf-8",
             cache:false
->>>>>>> c4a-atc/master
         });
 
         jQuery["postJSON"] = function (url, data, callback) {
@@ -57,12 +53,8 @@ define(['ojs/ojcore', 'knockout', 'navigation', 'setting_properties', 'ojs/ojrou
                     'login': {label: 'Login', isDefault: true},
                     'cr_list_full': {label: 'Care Recipient'},
                     'detection_ges': {label: 'Detection GES'},
-<<<<<<< HEAD
                     'detection_gef': {label: 'Detection GEF'},
                     'detection_mea': {label: 'Detection MEA'}
-=======
-                    'detection_gef': {label: 'Detection GEF'}
->>>>>>> c4a-atc/master
                 });
                 oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
@@ -99,29 +91,13 @@ define(['ojs/ojcore', 'knockout', 'navigation', 'setting_properties', 'ojs/ojrou
                 self.appName = ko.observable("C4A-dashboard");
                 self.userLogin = ko.observable("");
                 self.userPilotName = ko.observable("");
-<<<<<<< HEAD
-                self.userPilotCode = ko.observable("");
-                self.userRoleId = ko.observable("");
-                if (sp.noData()) {
-                    console.log(" user is logged in");
-                    var userfullname = sessionStorage.getItem("userfullname");
-                    self.userLogin(userfullname);
-                    var userpilotname = sessionStorage.getItem("pilotname");
-                    self.userPilotName(userpilotname);
-                    var userpilotcode = sessionStorage.getItem("pilotcode");
-                    self.userPilotCode(userpilotcode);
-                    var userroleid = sessionStorage.getItem("roleid");
-                    self.userRoleId(userroleid);
-=======
-                self.userPilotId = ko.observable("");
-                self.userRoleId = ko.observable("");
+ 
                 if (sp.noData()) {
                     console.log(" user is logged in");
                     var displayname = sessionStorage.getItem("displayname");
                     self.userLogin(displayname);
                     var userpilotname = sessionStorage.getItem("pilotname");
                     self.userPilotName(userpilotname);
->>>>>>> c4a-atc/master
                 } else {
                     $('.user-menu').css({display: 'none'});
                     console.log(" user is not logged in");
@@ -133,23 +109,11 @@ define(['ojs/ojcore', 'knockout', 'navigation', 'setting_properties', 'ojs/ojrou
                 self.menuItemSelect = function (event, ui) {
                     switch (ui.item.attr("id")) {
                         case "out":
-<<<<<<< HEAD
-                            sessionStorage.removeItem("userfullname");
-                            sessionStorage.removeItem("username");
-                            sessionStorage.removeItem("pilotname");
-                            sessionStorage.removeItem("pilotcode");
-                            sessionStorage.removeItem("roleid");
-                            $('.user-menu').css({display: 'none'});
-                            console.log(" user is not logged in");
-=======
                             sessionStorage.removeItem("jwt");
                             sessionStorage.removeItem("displayname");
                             sessionStorage.removeItem("pilotname");
                             $('.user-menu').css({display: 'none'});
                             console.log(" user is not logged in");
-                            /*ko.cleanNode(document.getElementById('globalBody')); // clean it
-                            ko.applyBindings(app, document.getElementById('globalBody'));*/
->>>>>>> c4a-atc/master
                             oj.Router.rootInstance.go("login");
                             break;
                         case "help-list":
@@ -172,6 +136,9 @@ define(['ojs/ojcore', 'knockout', 'navigation', 'setting_properties', 'ojs/ojrou
                     new footerLink('Terms Of Use', 'termsOfUse', 'http://www.city4ageproject.eu/'),
                     new footerLink('Your Privacy Rights', 'yourPrivacyRights', 'http://www.city4ageproject.eu/')
                 ]);
+                
+                this.loggedinasLabel = oj.Translations.getTranslatedString('loggedinas');
+                
             }
 
             return new AppControllerViewModel();
